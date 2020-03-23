@@ -1,9 +1,9 @@
 
 $(document).ready(function() {
 var vacunaeArray = [
-    {"creatorname": "Boris Guevara","nombrevacuna": "AntiPolio","fechavacuna": "20-01-2019","dosisvacuna":1, "index":1 },
-    {"creatorname": "Boris Guevara","nombrevacuna": "Hepatitis A","fechavacuna": "20-01-2019","dosisvacuna":1, "index":1 },
-    {"creatorname": "Boris Guevara","nombrevacuna": "Varicela","fechavacuna": "20-01-2019","dosisvacuna":1, "index":1 },
+    {"creatorname": "Jose Morlet","nombrevacuna": "AntiPolio","fechavacuna": "20-01-2019","dosisvacuna":1, "index":1 },
+    {"creatorname": "Jose Morlet","nombrevacuna": "Hepatitis A","fechavacuna": "20-01-2019","dosisvacuna":1, "index":1 },
+    {"creatorname": "Lizet Vargas","nombrevacuna": "Varicela","fechavacuna": "20-01-2019","dosisvacuna":1, "index":1 },
   ];
 //https://pbs.twimg.com/media/Dsdt6gOXcAAksLu.jpg
 
