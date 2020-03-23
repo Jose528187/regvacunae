@@ -15,6 +15,8 @@
 
      <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
 
+     <link href="sweetalert/css/sweetalert.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body class="top-navigation">
@@ -72,20 +74,25 @@
                         <div class="row">
                             <div class="col-sm-8 b-r"><h3 class="m-t-none m-b">Vacunas</h3>
                                 
-                                <form role="form">
-                                    <div class="form-group"><label>Nombre</label> <textarea maxlength='200'    class='form-control' style='margin-top: 0px; margin-bottom: 0px; height: 98px;'></textarea></div>
+                               
+
+                                    <div class="form-group"><label>Nombre de la Persona</label> <textarea id="nombrepersona" maxlength='200'    class='form-control' style='margin-top: 0px; margin-bottom: 0px; height: 98px;'></textarea></div>
+
+
+
+                                    <div class="form-group"><label>Nombre</label> <textarea id="nombrevacuna" maxlength='200'    class='form-control' style='margin-top: 0px; margin-bottom: 0px; height: 98px;'></textarea></div>
 
                                     
                                     <div class="form-group"><label class="font-normal">Fecha de Colocación</label>
                                     <div class="input-group date">
-                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="03/04/2014">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="fechavacuna" type="text" class="form-control" value="03/04/2014">
                                     </div></div>
                              
 
 
 
                                    <div class="form-group"><label>Nro de dósis</label> 
-                                        <select class="form-control" >
+                                        <select id='dosisvacuna' class="form-control" >
                                             <option value='1'>Primera dósis o dósis única</option>
                                             <option value='2'>Segunda dósis</option>
                                             <option value='3'>Tercera dósis</option>
@@ -99,10 +106,10 @@
                                     </div>
 
                                     
-                               <button class="btn btn-sm btn-primary float-right m-t-n-xs" type="submit"><strong>Registrar</strong></button>
+                               <button id='regvacuna' class="btn btn-sm btn-primary float-right m-t-n-xs"><strong>Registrar</strong></button>
                                         
                                 
-                            </form>
+                            
                             </div>
                             <div class="col-sm-4"><h4>No tienes una Wallet Aeternity?</h4>
                                 <p>Tú puedes crear una Wallet aqui</p>
@@ -145,47 +152,43 @@
                                 </div>
                             </div>
                             <div class="ibox-content">
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
+
+
+                                      <div id="vacunaeBody">
+                                      </div>
+
+
+                          <script id="template" type="x-tmpl-mustache">
+                              
+        
+                                    <div class="table-responsive">
+                                      <table class="table table-striped">
                                         <thead>
                                         <tr>
 
                                             <th>#</th>
+                                            <th>Paciente</th>
                                             <th>Nombre de la Vacuna</th>
                                             <th>Fecha de Colocación </th>
                                             <th>Nro. de Dósis </th>
                                         </tr>
                                         </thead>
                                         <tbody>
+                                     {{#vacunaeArray}}       
                                         <tr>
-                                            <td>1</td>
-                                            <td>Antipolio</td>
-                                            <td>28-07-2020</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Varicela</td>
-                                            <td>15-07-2018</td>
-                                            <td>1</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>Varicela</td>
-                                            <td>25-07-2019</td>
-                                            <td>3</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>4</td>
-                                            <td>Varicela</td>
-                                            <td>01-01-2020</td>
-                                            <td>1</td>
-                                        </tr>
-
+                                            <td>{{index}}</td>
+                                            <td><label class='label label-success'>{{creatorname}}</label></td>
+                                            <td>{{nombrevacuna}}</td>
+                                            <td>{{fechavacuna}}</td>
+                                            <td>{{dosisvacuna}}</td>
+                                       </tr>
+                                    {{/vacunaeArray}}            
+                                    
                                         </tbody>
                                     </table>
                                 </div>
+                             
+                            </script> 
 
                             </div>
                         </div>
@@ -196,6 +199,11 @@
             </div>
 
         </div>
+        
+
+        
+
+
 
 
 
@@ -211,84 +219,27 @@
         </div>
         </div>
 
+     <script src="js/jquery-3.1.1.min.js"></script>
 
+   
 
-    <!-- Mainly scripts -->
-    <script src="js/jquery-3.1.1.min.js"></script>
+   
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-    <!-- Custom and plugin javascript -->
-    <script src="js/inspinia.js"></script>
-    <script src="js/plugins/pace/pace.min.js"></script>
-
-    <!-- Flot -->
-    <script src="js/plugins/flot/jquery.flot.js"></script>
-    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
-
-    <!-- ChartJS-->
-    <script src="js/plugins/chartJs/Chart.min.js"></script>
-
-    <!-- Peity -->
-    <script src="js/plugins/peity/jquery.peity.min.js"></script>
-    <!-- Peity demo -->
-    <script src="js/demo/peity-demo.js"></script>
-
-    <!-- Data picker -->
-   <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
-
-
-
-    <script>
-        $(document).ready(function() {
-
-              function includeHTML() {
-                  var z, i, elmnt, file, xhttp;
-                  /* Loop through a collection of all HTML elements: */
-                  z = document.getElementsByTagName("*");
-                  for (i = 0; i < z.length; i++) {
-                    elmnt = z[i];
-                    /*search for elements with a certain atrribute:*/
-                    file = elmnt.getAttribute("w3-include-html");
-                    if (file) {
-                      /* Make an HTTP request using the attribute value as the file name: */
-                      xhttp = new XMLHttpRequest();
-                      xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4) {
-                          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                          /* Remove the attribute, and call this function once more: */
-                          elmnt.removeAttribute("w3-include-html");
-                          includeHTML();
-                        }
-                      }
-                      xhttp.open("GET", file, true);
-                      xhttp.send();
-                      /* Exit the function: */
-                      return;
-                    }
-                  }
-                }
-
-            includeHTML();
-
-
-
-
-         var mem = $('.input-group.date').datepicker({
-                todayBtn: "linked",
-                keyboardNavigation: false,
-                forceParse: false,
-                calendarWeeks: true,
-                autoclose: true
-            });
-
     
-        });
-    </script>
+    <script src="js/mustache.js"> </script>
+
+
+    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <script src="sweetalert/js/sweetalert.min.js" type="text/javascript"></script>
+
+    <script src="js/index.js"></script>
+
+
+
+
 
 </body>
 
