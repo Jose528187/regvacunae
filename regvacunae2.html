@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registro de vacunación</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+     <link href="css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+
+     <link href="sweetalert/css/sweetalert.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="top-navigation">
+
+    <div id="wrapper">
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+        <nav class="navbar navbar-expand-lg navbar-static-top" role="navigation">
+            <!--<div class="navbar-header">-->
+                <!--<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">-->
+                    <!--<i class="fa fa-reorder"></i>-->
+                <!--</button>-->
+
+                <a href="index.html" class="navbar-brand">RegVacunAE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-reorder"></i>
+                </button>
+
+            <!--</div>-->
+           <div w3-include-html="menu2.html"></div>
+        </nav>
+        </div>
+
+
+        <div class="wrapper wrapper-content">
+            <div class="container">
+
+
+
+
+         <div class="row">       
+            <div class="col-lg-12">
+                <div class="ibox ">
+                    <div class="ibox-title">
+                        <h5>Registre su tarjeta de Vacunación</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#" class="dropdown-item">Config option 1</a>
+                                </li>
+                                <li><a href="#" class="dropdown-item">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-sm-8 b-r"><h3 class="m-t-none m-b">Vacunas</h3>
+                                
+                               
+
+                                    <div class="form-group"><label>Nombre de la Persona</label> <textarea id="nombrepersona" maxlength='200'    class='form-control' style='margin-top: 0px; margin-bottom: 0px; height: 98px;'></textarea></div>
+
+
+
+                                    <div class="form-group"><label>Nombre</label> <textarea id="nombrevacuna" maxlength='200'    class='form-control' style='margin-top: 0px; margin-bottom: 0px; height: 98px;'></textarea></div>
+
+                                    
+                                    <div class="form-group"><label class="font-normal">Fecha de Colocación</label>
+                                    <div class="input-group date">
+                                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input id="fechavacuna" type="text" class="form-control" value="03/04/2014">
+                                    </div></div>
+                             
+
+
+
+                                   <div class="form-group"><label>Nro de dósis</label> 
+                                        <select id='dosisvacuna' class="form-control" >
+                                            <option value='1'>Primera dósis o dósis única</option>
+                                            <option value='2'>Segunda dósis</option>
+                                            <option value='3'>Tercera dósis</option>
+                                            <option value='4'>Cuarta dósis</option>
+                                            <option value='4'>Quinta dósis</option>
+                                            <option value='4'>Sexta dósis</option>
+                                            <option value='4'>Octava dósis</option>
+                                            <option value='4'>Novena dósis</option>
+                                            <option value='4'>Décima dósis</option>
+                                        </select>
+                                    </div>
+
+                                    
+                               <button id='regvacuna' class="btn btn-sm btn-primary float-right m-t-n-xs"><strong>Registrar</strong></button>
+                                        
+                                
+                            
+                            </div>
+                            <div class="col-sm-4"><h4>No tienes una Wallet Aeternity?</h4>
+                                <p>Tú puedes crear una Wallet aqui</p>
+                                <p class="text-center">
+
+                                    <ul><li>Base æpp (mobile) <a href="https://base.aepps.com" target="_blank" rel="noopener noreferrer">https://base.aepps.com</a></li> <li>Ledger Hardware Wallet (desktop) <a href="https://base.aepps.com" target="_blank" rel="noopener noreferrer">https://base.aepps.com</a></li> <li>Trust Wallet (Binance)  <a href="https://trustwallet.com" target="_blank" rel="noopener noreferrer">https://trustwallet.com</a></li> <li>Waellet (browser extension) <a href="https://waellet.com" target="_blank" rel="noopener noreferrer">https://waellet.com</a></li> <li>AirGap (iOS/Android) <a href="https://airgap.it" target="_blank" rel="noopener noreferrer">https://airgap.it</a></li></ul>
+
+
+                                 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>  
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="ibox ">
+                            <div class="ibox-title">
+                                <h5> Registro de Vacunación </h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="fa fa-wrench"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-user">
+                                        <li><a href="#" class="dropdown-item">Config option 1</a>
+                                        </li>
+                                        <li><a href="#" class="dropdown-item">Config option 2</a>
+                                        </li>
+                                    </ul>
+                                    <a class="close-link">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ibox-content">
+
+
+                                      <div id="vacunaeBody">
+                                      </div>
+
+
+                          <script id="template" type="x-tmpl-mustache">
+                              
+        
+                                    <div class="table-responsive">
+                                      <table class="table table-striped">
+                                        <thead>
+                                        <tr>
+
+                                            <th>#</th>
+                                            <th>Paciente</th>
+                                            <th>Nombre de la Vacuna</th>
+                                            <th>Fecha de Colocación </th>
+                                            <th>Nro. de Dósis </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                     {{#vacunaeArray}}       
+                                        <tr>
+                                            <td>{{index}}</td>
+                                            <td><label class='label label-success'>{{creatorname}}</label></td>
+                                            <td>{{nombrevacuna}}</td>
+                                            <td>{{fechavacuna}}</td>
+                                            <td>{{dosisvacuna}}</td>
+                                       </tr>
+                                    {{/vacunaeArray}}            
+                                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                             
+                            </script> 
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        
+
+
+
+
+
+        <div class="footer">
+            <div class="float-right">
+                <strong>Venezuela</strong>
+            </div>
+            <div>
+                <strong>Copyright</strong> RegVacunAE
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+     <script src="js/jquery-3.1.1.min.js"></script>
+
+   
+
+   
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    
+    <script src="js/mustache.js"> </script>
+
+
+    <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+    <script src="sweetalert/js/sweetalert.min.js" type="text/javascript"></script>
+
+    <script src="js/index2.js"></script>
+
+
+
+
+
+</body>
+
+</html>
