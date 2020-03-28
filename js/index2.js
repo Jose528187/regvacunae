@@ -127,7 +127,7 @@ $('#regvacuna').click(async function(){
 
   //Add the new created memeobject to our vacunaeArray
     vacunaeArray.push({
-      creatorName: nombre,
+      creatorName: nombrepersona,
       nombrevacuna: nombrevacuna,
       fechavacuna: fechavacuna,
       dosisvacuna: dosivacuna,
