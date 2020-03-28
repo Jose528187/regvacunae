@@ -32,16 +32,18 @@ const contractSource = `
 `;
 
 //Address of the meme voting smart contract on the testnet of the aeternity blockchain
-const contractAddress = 'ct_26H2AhTgY6Qs4QWauS8DPmS9BY6YSrqtY4HJzsnEhZFWxDsvss';
+const contractAddress = 'ct_28o3TLFgWtsKLYgVHwhuiyicMgvLezDQq5DTYtpfDDrpvXtixd';
+
+
 //Create variable for client so it can be used in different functions
 var client = null;
-//Create a new global array for the memes
+//Create a new global array for the vacunae
 var vacunaeArray = [];
 //Create a new variable to store the length of the meme globally
 var vacunaeLength = 0;
 
 function renderVacunas() {
-  //Order the memes array so that the meme with the most votes is on top
+  //Order the vacunae array so that the meme with the most votes is on top
   vacunaeArray = vacunaeArray.sort(function(a,b){return b.votes-a.votes})
   //Get the template we created in a block scoped variable
   let template = $('#template').html();
@@ -80,7 +82,7 @@ window.addEventListener('load', async () => {
   //Initialize the Aepp object through aepp-sdk.browser.js, the base app needs to be running.
   client = await Ae.Aepp();
 
-  //First make a call to get to know how may memes have been created and need to be displayed
+  //First make a call to get to know how may vacunae have been created and need to be displayed
   //Assign the value of meme length to the global variable
   vacunaeLength = await callStatic('getVacunaeLength', []);
 
@@ -90,7 +92,7 @@ window.addEventListener('load', async () => {
     //Make the call to the blockchain to get all relevant information on the meme
     const vacunae = await callStatic('getVacunae', [i]);
 
-    //Create meme object with  info from the call and push into the array with all memes
+    //Create meme object with  info from the call and push into the array with all vacubae
     vacunaeArray.push({
       creatorName: vacunae.name,
       nombrevacuna: vacunae.nombrevacuna,
@@ -101,7 +103,7 @@ window.addEventListener('load', async () => {
   }
 
   
-  //Display updated memes
+  //Display updated vacunae
   renderVacunas();
 
   //Hide loader animation
