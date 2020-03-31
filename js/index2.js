@@ -31,8 +31,8 @@ payable contract RegVacunae =
       state.vacunaeLength
 `;
 
-//Address of the meme voting smart contract on the testnet of the aeternity blockchain
-const contractAddress = 'ct_EphKHK2cpnvnfUAH554Y4453PKzzfv8AZLHTs1yQMdmy7CKkJ';
+//Address of the regvacunae smart contract on the testnet of the aeternity blockchain
+const contractAddress = 'ct_EbJAXfAwPbzvVfNZ6dsUPYuvHt7K5k57Rnesp5vG173QdTNCV';
 
 
 //Create variable for client so it can be used in different functions
