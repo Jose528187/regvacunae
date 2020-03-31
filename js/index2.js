@@ -1,5 +1,5 @@
 const contractSource = `
-  payable contract RegVacunae =
+payable contract RegVacunae =
 
     record vacunae =
       { creatorAddress : address,
@@ -94,7 +94,7 @@ window.addEventListener('load', async () => {
 
     //Create meme object with  info from the call and push into the array with all vacubae
     vacunaeArray.push({
-      creatorName: vacunae.name,
+      creatorName: vacunae.nombre,
       nombrevacuna: vacunae.nombrevacuna,
       fechavacuna: vacunae.fechavacuna,
       dosisvacuna: vacunae.dosisvacuna,
@@ -123,7 +123,7 @@ $('#regvacuna').click(async function(){
                 dosisvacuna = ($('#dosisvacuna').val()) ;
 
   //Make the contract call to register the meme with the newly passed values
-  await contractCall('registerVacunae', [nombre,nombrevacuna,fechavacuna, dosisvacuna], 0);
+  await contractCall('registerVacunae', [nombrepersona,nombrevacuna,fechavacuna, dosisvacuna], 0);
 
   //Add the new created memeobject to our vacunaeArray
     vacunaeArray.push({
