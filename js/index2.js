@@ -122,22 +122,7 @@ window.addEventListener('load', async () => {
 $('#regvacuna').click(async function(){
   //$("#loader").show();
   //Create two new let variables which get the values from the input fields
-  swal({   
-    title: "¿Esta seguro que desea registrar la vacuna",   
-    text: "",   
-    type: "success",   
-    showCancelButton: true,   
-    confirmButtonColor: "#00a65a",  
-    confirmButtonText: "Si",   
-    cancelButtonText: "No",   
-    closeOnConfirm: true,   
-    closeOnCancel: false }, 
-
-    function(isConfirm){   
-      if (isConfirm) {     
-            
-
-
+  
                 const nombrepersona = ($('#nombrepersona').val()),
                 nombrevacuna = ($('#nombrevacuna').val()),
                 fechavacuna = ($('#fechavacuna').val()),
@@ -174,12 +159,7 @@ $('#regvacuna').click(async function(){
           }
 
 
-      } else {     
-        swal("Registro Vacunas", 
-          "Se cancelo el proceso", 
-        "error");   
-      } 
-    });
+     
  
 });
 
