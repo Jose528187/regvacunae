@@ -130,7 +130,7 @@ $('#regvacuna').click(async function(){
       creatorName: nombrepersona,
       nombrevacuna: nombrevacuna,
       fechavacuna: fechavacuna,
-      dosisvacuna: dosivacuna,
+      dosisvacuna: dosisvacuna,
       index: vacunaeArray.length+1,
     })
 
