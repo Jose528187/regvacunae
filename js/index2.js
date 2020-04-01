@@ -107,7 +107,6 @@ window.addEventListener('load', async () => {
  
 
   }
-
   
   //Display updated vacunae
   renderVacunas();
@@ -144,7 +143,6 @@ $('#regvacuna').click(async function(){
                 //Add the new created memeobject to our vacunaeArray
                   vacunaeArray.push({
                     creatorName: nombrepersona,
-                    nombre: nombrepersona,
                     nombrevacuna: nombrevacuna,
                     fechavacuna: fechavacuna,
                     dosisvacuna: dosisvacuna,
