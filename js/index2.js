@@ -100,6 +100,17 @@ window.addEventListener('load', async () => {
       dosisvacuna: vacunae.dosisvacuna,
       index: i,
     })
+
+
+   var mem = $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+
   }
 
   
@@ -116,24 +127,76 @@ window.addEventListener('load', async () => {
 $('#regvacuna').click(async function(){
   //$("#loader").show();
   //Create two new let variables which get the values from the input fields
-  
- const nombrepersona = ($('#nombrepersona').val()),
+
+
+
+
+
+swal({   
+    title: "¿Esta seguro que desea registrar la vacuna",   
+    text: "",   
+    type: "success",   
+    showCancelButton: true,   
+    confirmButtonColor: "#00a65a",  
+    confirmButtonText: "Si",   
+    cancelButtonText: "No",   
+    closeOnConfirm: true,   
+    closeOnCancel: false }, 
+
+    function(isConfirm){   
+      if (isConfirm) {     
+            
+
+
+                const nombrepersona = ($('#nombrepersona').val()),
                 nombrevacuna = ($('#nombrevacuna').val()),
                 fechavacuna = ($('#fechavacuna').val()),
                 dosisvacuna = ($('#dosisvacuna').val()) ;
 
-  //Make the contract call to register the meme with the newly passed values
-  await contractCall('registerVacunae', [nombrepersona,nombrevacuna,fechavacuna, dosisvacuna], 0);
+  
+            if (nombrepersona=='' || nombrevacuna==''){
+            
 
-  //Add the new created memeobject to our vacunaeArray
-    vacunaeArray.push({
-      creatorName: nombrepersona,
-      nombrevacuna: nombrevacuna,
-      fechavacuna: fechavacuna,
-      dosisvacuna: dosisvacuna,
-      index: vacunaeArray.length+1,
-    })
+             setTimeout(function(){swal("Registrando Vacuna", "Debe colocar todos los datos", "error");}, 1000);
 
-  renderVacunas();
+             return false;
+            
+            }  else {
+
+              //Make the contract call to register the meme with the newly passed values
+                await contractCall('registerVacunae', [nombrepersona,nombrevacuna,fechavacuna, dosisvacuna], 0);
+
+                //Add the new created memeobject to our vacunaeArray
+                  vacunaeArray.push({
+                    creatorName: nombrepersona,
+                    nombre: nombrepersona,
+                    nombrevacuna: nombrevacuna,
+                    fechavacuna: fechavacuna,
+                    dosisvacuna: dosisvacuna,
+                    index: vacunaeArray.length+1,
+                  })
+
+
+            swal("Registrando Vacuna", "Datos guardados", "success");
+
+            renderVacunas();
+
+          }
+
+
+      } else {     
+        swal("Registro Vacunas", 
+          "Se cancelo el proceso", 
+        "error");   
+      } 
+    });
+
+
+
+
+
+
+  
+ 
   
 });
