@@ -31,6 +31,15 @@ payable contract RegVacunae =
       state.vacunaeLength
 `;
 
+ var mem = $('.input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+
 //Address of the regvacunae smart contract on the testnet of the aeternity blockchain
 const contractAddress = 'ct_EbJAXfAwPbzvVfNZ6dsUPYuvHt7K5k57Rnesp5vG173QdTNCV';
 
@@ -100,16 +109,7 @@ window.addEventListener('load', async () => {
       dosisvacuna: vacunae.dosisvacuna,
       index: i,
     })
-
-
-   var mem = $('.input-group.date').datepicker({
-                todayBtn: "linked",
-                keyboardNavigation: false,
-                forceParse: false,
-                calendarWeeks: true,
-                autoclose: true
-            });
-
+ 
 
   }
 
@@ -127,12 +127,7 @@ window.addEventListener('load', async () => {
 $('#regvacuna').click(async function(){
   //$("#loader").show();
   //Create two new let variables which get the values from the input fields
-
-
-
-
-
-swal({   
+  swal({   
     title: "¿Esta seguro que desea registrar la vacuna",   
     text: "",   
     type: "success",   
