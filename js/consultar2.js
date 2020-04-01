@@ -80,6 +80,7 @@ async function contractCall(func, args, value) {
 
 //Execute main function
 window.addEventListener('load', async () => {
+  $("#loader").show();
     
   //Initialize the Aepp object through aepp-sdk.browser.js, the base app needs to be running.
   client = await Ae.Aepp();
@@ -110,10 +111,9 @@ window.addEventListener('load', async () => {
   }
   
   //Display updated vacunae
+  $("#loader").hide();
   renderVacunas();
 
-  //Hide loader animation
-  //$("#loader").hide();
 });
 
 

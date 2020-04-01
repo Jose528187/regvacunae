@@ -12,6 +12,7 @@ console.log(vacunaeArray);
 
 function renderVacunas() {
   console.log('paso 1');
+  $("#loader").show();
   vacunaeArray = vacunaeArray.sort(function(a,b){return b.creatorname})
   var template = $('#template').html();
   Mustache.parse(template);
@@ -24,10 +25,14 @@ function renderVacunas() {
   console.log(rendered);
 
   $('#vacunaeBody').html(rendered);
+   $("#loader").hide();
 }
 
 window.addEventListener('load', async () => {
   console.log('paso 0');
+
+ 
+
   renderVacunas();
 });
 

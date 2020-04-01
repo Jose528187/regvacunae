@@ -82,6 +82,7 @@ async function contractCall(func, args, value) {
 
 //Execute main function
 window.addEventListener('load', async () => {
+  $("#loader").show();
     
   //Initialize the Aepp object through aepp-sdk.browser.js, the base app needs to be running.
   client = await Ae.Aepp();
@@ -111,6 +112,7 @@ window.addEventListener('load', async () => {
 
   }
   
+  $("#loader").hide();
   //Display updated vacunae
   renderVacunas();
 
@@ -122,7 +124,7 @@ window.addEventListener('load', async () => {
 
 //If someone clicks to register a meme, get the input and execute the registerCall
 $('#regvacuna').click(async function(){
-  //$("#loader").show();
+  $("#loader").show();
   //Create two new let variables which get the values from the input fields
   
           const nombrepersona = ($('#nombrepersona').val()),
@@ -135,6 +137,7 @@ $('#regvacuna').click(async function(){
             
 
              setTimeout(function(){swal("Registrando Vacuna", "Debe colocar todos los datos", "error");}, 1000);
+                        $("#loader").hide();
 
                          renderVacunas();
             
@@ -154,6 +157,7 @@ $('#regvacuna').click(async function(){
 
             console.log("paso 2");      
             console.log(vacunaeArray);
+            $("#loader").hide();
 
             swal("Registrando Vacuna", "Datos guardados", "success");
 
