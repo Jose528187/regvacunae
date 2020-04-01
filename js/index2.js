@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 
 const contractSource = `
 payable contract RegVacunae =
@@ -183,6 +183,7 @@ $('#regvacuna').click(async function(){
  
 });
 
+$(document).ready(function() {
 
      function includeHTML() {
                   var z, i, elmnt, file, xhttp;
