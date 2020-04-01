@@ -105,6 +105,9 @@ window.addEventListener('load', async () => {
       index: i,
     })
  
+  console.log("paso 1");
+  console.log(vacunaeLength);
+  console.log(vacunaeArray);
 
   }
   
@@ -149,6 +152,8 @@ $('#regvacuna').click(async function(){
                     index: vacunaeArray.length+1,
                   })
 
+            console.log("paso 2");      
+            console.log(vacunaeArray);
 
             swal("Registrando Vacuna", "Datos guardados", "success");
 
