@@ -123,7 +123,7 @@ $('#regvacuna').click(async function(){
   //$("#loader").show();
   //Create two new let variables which get the values from the input fields
   
-                const nombrepersona = ($('#nombrepersona').val()),
+          const nombrepersona = ($('#nombrepersona').val()),
                 nombrevacuna = ($('#nombrevacuna').val()),
                 fechavacuna = ($('#fechavacuna').val()),
                 dosisvacuna = ($('#dosisvacuna').val()) ;
@@ -134,7 +134,7 @@ $('#regvacuna').click(async function(){
 
              setTimeout(function(){swal("Registrando Vacuna", "Debe colocar todos los datos", "error");}, 1000);
 
-             return false;
+                         renderVacunas();
             
             }  else {
 
@@ -163,7 +163,7 @@ $('#regvacuna').click(async function(){
  
 });
 
-$(document).ready(function() {
+
 
      function includeHTML() {
                   var z, i, elmnt, file, xhttp;
@@ -205,4 +205,3 @@ var mem = $('.input-group.date').datepicker({
             });
 
 
-});
